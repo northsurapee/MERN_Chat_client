@@ -26,7 +26,7 @@ export default function Chat() {
 
     function connectToWs() {
         // Connect to WS
-        const baseURL = import.meta.env.VITE_API_BASE_URL;
+        const baseURL = axios.defaults.baseURL;
         const ws = new WebSocket('ws://' + baseURL.split("//")[1]);
         setWs(ws);
         // Received message from WS
