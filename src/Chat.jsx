@@ -25,9 +25,9 @@ export default function Chat() {
     }, [selectedUserId]); // To re-create listener function with latest "selectedUserId" (Because value of the state is still be the same when function is created)
 
     function connectToWs() {
-        // Connect to WS
+        // Connect to WS (wss for https base protocol)
         const baseURL = axios.defaults.baseURL;
-        const ws = new WebSocket('wss://' + baseURL.split("//")[1]);
+        const ws = new WebSocket('ws://' + baseURL.split("//")[1]);
         setWs(ws);
         // Received message from WS
         ws.addEventListener('message', handleMessage); 
