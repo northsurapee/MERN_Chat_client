@@ -27,7 +27,7 @@ export default function Chat() {
     function connectToWs() {
         // Connect to WS
         const baseURL = axios.defaults.baseURL;
-        const ws = new WebSocket('ws://' + baseURL.split("//")[1]);
+        const ws = new WebSocket('wss://' + baseURL.split("//")[1]);
         setWs(ws);
         // Received message from WS
         ws.addEventListener('message', handleMessage); 
